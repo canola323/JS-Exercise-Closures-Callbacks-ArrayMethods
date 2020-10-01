@@ -28,9 +28,15 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ *    Counter 2 is reusable and counter 1 is not.
+ * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
- * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ *   counter 1 because after the function it has a variable.
+ * 
+ * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better?
+ * 
+ *   
  *
 */
 
@@ -56,11 +62,13 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(){
 
-    /*Code Here*/
+ return Math.floor(Math.random() * 3);
 
 }
+
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -76,11 +84,25 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning, score){
 
-  /*Code Here*/
+  function teamScore() {
+    let totalScore = 0;
+    for( let i = 0; i < score; i++) {
+      totalScore += inning();
+    }
+
+    return totalScore;
+  }
+
+  return {
+    Home: teamScore(),
+    Away: teamScore()
+  }
 
 }
+
+console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
