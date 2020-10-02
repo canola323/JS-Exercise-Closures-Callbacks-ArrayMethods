@@ -32,7 +32,7 @@ function processFirstItem(stringList, callback) {
  * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
- *   counter 1 because after the function it has a variable.
+ *   counter 1 because you are calling on a function inside a function by using a variable at the end.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better?
  * 
@@ -126,7 +126,7 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
+function scoreboard() {
   /* CODE HERE */
 }
 
